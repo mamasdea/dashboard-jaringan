@@ -1,0 +1,14 @@
+#   sudo systemctl enable --now dashboard-cadangan.timer
+
+[Unit]
+Description=Cadangan harian Dashboard Jaringan
+
+[Timer]
+# 01.15 waktu server. Retensi monitoring berjalan 02.30 WIB; atur supaya tidak
+# bertumpuk bila zona waktu server bukan WIB.
+OnCalendar=*-*-* 01:15:00
+RandomizedDelaySec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

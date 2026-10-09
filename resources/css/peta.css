@@ -1,0 +1,168 @@
+/* Penanda dan legenda peta jaringan. Bentuk dibedakan selain warna. */
+
+.peta-penanda,
+.peta-legenda {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.45);
+}
+
+.peta-legenda {
+    flex: none;
+}
+
+/* OPD: persegi besar. */
+.peta-penanda-opd,
+.peta-legenda-opd {
+    width: 18px;
+    height: 18px;
+    background: #0f766e;
+    border-radius: 3px;
+}
+
+/* Perangkat utama: wajik. */
+.peta-penanda-perangkat,
+.peta-legenda-perangkat {
+    background: #f59e0b;
+    transform: rotate(45deg);
+}
+
+/* Tiang: lingkaran kecil. */
+.peta-penanda-tiang,
+.peta-legenda-tiang {
+    width: 10px;
+    height: 10px;
+    margin: 4px;
+    background: #52525b;
+    border-radius: 9999px;
+}
+
+.peta-legenda-tiang {
+    margin: 0 2px;
+}
+
+/* Titik jaringan: lingkaran berwarna per jenis. */
+.peta-penanda-odc,
+.peta-legenda-odc,
+.peta-penanda-odp,
+.peta-legenda-odp,
+.peta-penanda-closure,
+.peta-legenda-closure,
+.peta-penanda-otb,
+.peta-legenda-otb {
+    border-radius: 9999px;
+}
+
+.peta-penanda-odc,
+.peta-legenda-odc {
+    background: #7c3aed;
+}
+
+.peta-penanda-odp,
+.peta-legenda-odp {
+    background: #db2777;
+}
+
+.peta-penanda-closure,
+.peta-legenda-closure {
+    background: #ffffff;
+    border-color: #18181b;
+    box-shadow: none;
+}
+
+.peta-penanda-otb,
+.peta-legenda-otb {
+    background: #16a34a;
+    border-radius: 3px;
+}
+
+/* Jalur: garis di legenda. */
+.peta-legenda-backbone,
+.peta-legenda-distribusi,
+.peta-legenda-kabel-lain {
+    width: 18px;
+    height: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.peta-legenda-backbone {
+    border-top: 5px solid #dc2626;
+}
+
+.peta-legenda-distribusi {
+    border-top: 3px solid #2563eb;
+}
+
+.peta-legenda-kabel-lain {
+    border-top: 3px dashed #71717a;
+}
+
+.peta-popup {
+    min-width: 12rem;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+}
+
+.peta-popup-jenis {
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #71717a;
+}
+
+.peta-popup-kode {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.peta-popup-lencana {
+    padding: 0 0.3rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #86198f;
+    background: #fae8ff;
+    border-radius: 0.25rem;
+}
+
+.peta-popup-keterangan {
+    color: #52525b;
+}
+
+.peta-popup-peringatan {
+    color: #b45309;
+}
+
+.peta-popup-tautan {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-weight: 600;
+}
+
+.peta-hasil-tombol {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    text-align: start;
+}
+
+.peta-hasil-tombol:hover,
+.peta-hasil-tombol:focus-visible {
+    background: rgb(113 113 122 / 0.15);
+}
+
+.peta-hasil-tautan {
+    display: block;
+    padding: 0 0.75rem 0.4rem;
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+
+/* Kontrol Leaflet tidak boleh menutupi menu dan modal aplikasi. */
+.leaflet-container {
+    z-index: 0;
+    font: inherit;
+}

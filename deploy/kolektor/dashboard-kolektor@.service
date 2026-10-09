@@ -1,0 +1,39 @@
+# Kolektor monitoring sebagai layanan systemd (alternatif Supervisor).
+#
+#   sudo cp deploy/kolektor/dashboard-kolektor@.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now dashboard-kolektor@1
+#
+# KONKURENSI = jumlah instans. Mulai dari satu (@1); tambah @2 dan seterusnya
+# hanya bila satu putaran tidak selesai dalam interval pemeriksaan.
+
+[Unit]
+Description=Kolektor monitoring Dashboard Jaringan (%i)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=kolektor
+Group=kolektor
+WorkingDirectory=/srv/dashboard-kolektor
+
+# MIBS kosong: OID numerik dipakai, berkas MIB tidak dimuat.
+Environment=MIBS=
+Environment=SNMP_PERSISTENT_DIR=/var/lib/dashboard-kolektor/snmp
+Environment=SNMPCONFPATH=/var/lib/dashboard-kolektor/snmp
+StateDirectory=dashboard-kolektor
+
+# -d extension=snmp : ekstensi SNMP dimuat hanya untuk proses ini.
+ExecStart=/usr/bin/php -d extension=snmp artisan monitoring:kolektor --jeda=5
+Restart=always
+RestartSec=5
+
+# ICMP lewat utilitas ping sistem; proses ini sendiri tidak butuh hak root.
+NoNewPrivileges=false
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

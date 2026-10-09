@@ -1,0 +1,20 @@
+kode_aset,nama,kode_opd,penempatan,lokasi,jenis,merek,model,nomor_seri,ip_manajemen,port_uplink,monitoring_aktif,switch_utama,catatan,simulasi
+SIM-RT-CORE-01,[SIMULASI] Router Inti Diskominfo,SIM-DISKOMINFO,diskominfo,Ruang NOC rak A1,router,Merek Contoh,RC-9000,SIM00000001,192.0.2.1,TenGigabitEthernet0/0/0,ya,tidak,Gerbang jaringan intra,ya
+SIM-SW-CORE-01,[SIMULASI] Switch Inti Diskominfo,SIM-DISKOMINFO,diskominfo,Ruang NOC rak A1,switch,Merek Contoh,SC-4800,SIM00000002,192.0.2.2,TenGigabitEthernet1/0/1,ya,ya,Agregasi seluruh tautan OPD,ya
+SIM-FW-CORE-01,[SIMULASI] Firewall Diskominfo,SIM-DISKOMINFO,diskominfo,Ruang NOC rak A2,firewall,Merek Contoh,FW-600,SIM00000003,192.0.2.3,port1,tidak,tidak,,ya
+SIM-OLT-01,[SIMULASI] OLT Diskominfo,SIM-DISKOMINFO,diskominfo,Ruang NOC rak B1,olt,Merek Contoh,OLT-16,SIM00000004,192.0.2.4,xgei-1/1/1,tidak,tidak,,ya
+SIM-SW-SETDA-01,[SIMULASI] Switch Utama Setda,SIM-SETDA,opd,Ruang server lantai 1,switch,Merek Contoh,SA-2400,SIM00000011,192.0.2.11,GigabitEthernet0/1,ya,ya,,ya
+SIM-SW-SETDA-02,[SIMULASI] Switch Lantai 2 Setda,SIM-SETDA,opd,Ruang panel lantai 2,switch,Merek Contoh,SA-2400,SIM00000012,192.0.2.12,GigabitEthernet0/24,tidak,tidak,,ya
+SIM-AGG-SETDA-01,[SIMULASI] Port Agregasi Setda di Diskominfo,SIM-SETDA,diskominfo,Ruang NOC rak A3,media_converter,Merek Contoh,MC-10G,SIM00000013,,,tidak,tidak,Ujung tautan Setda di sisi Diskominfo,ya
+SIM-SW-BAPPEDA-01,[SIMULASI] Switch Utama Bappeda,SIM-BAPPEDA,opd,Ruang server,switch,Merek Contoh,SA-2400,SIM00000021,192.0.2.21,GigabitEthernet0/1,ya,ya,,ya
+SIM-SW-BPKAD-01,[SIMULASI] Switch Utama BPKAD,SIM-BPKAD,opd,Ruang server,switch,Merek Contoh,SA-2400,SIM00000031,192.0.2.31,GigabitEthernet0/1,ya,ya,,ya
+SIM-AP-BPKAD-01,[SIMULASI] Access Point Aula BPKAD,SIM-BPKAD,opd,Aula,access_point,Merek Contoh,AP-AX,SIM00000032,192.0.2.32,,tidak,tidak,,ya
+SIM-SW-DINKES-01,[SIMULASI] Switch Utama Dinkes,SIM-DINKES,opd,Ruang server lantai 1,switch,Merek Contoh,SA-2400,SIM00000041,192.0.2.41,GigabitEthernet0/1,ya,ya,,ya
+SIM-SW-DISDIK-01,[SIMULASI] Switch Utama Disdik,SIM-DISDIK,opd,Ruang server,switch,Merek Lain,LS-48,SIM00000051,192.0.2.51,ge-0/0/47,ya,ya,,ya
+SIM-SW-DPUPR-01,[SIMULASI] Switch Utama DPUPR,SIM-DPUPR,opd,Ruang arsip,switch,Merek Lain,LS-24,SIM00000061,192.0.2.61,ge-0/0/23,ya,ya,,ya
+SIM-SW-DUKCAPIL-01,[SIMULASI] Switch Utama Dukcapil,SIM-DUKCAPIL,opd,Ruang server,switch,Merek Contoh,SA-2400,SIM00000071,192.0.2.71,GigabitEthernet0/1,ya,ya,,ya
+SIM-RT-DUKCAPIL-01,[SIMULASI] Router Layanan Dukcapil,SIM-DUKCAPIL,opd,Ruang server,router,Merek Contoh,RB-400,SIM00000072,192.0.2.72,ether1,tidak,tidak,,ya
+SIM-SW-RSUD-01,[SIMULASI] Switch Utama RSUD,SIM-RSUD,opd,Ruang SIMRS,switch,Merek Lain,LS-48,SIM00000081,192.0.2.81,xe-0/1/0,ya,ya,,ya
+SIM-SW-RSUD-02,[SIMULASI] Switch Gedung Rawat Inap RSUD,SIM-RSUD,opd,Gedung rawat inap,switch,Merek Lain,LS-24,SIM00000082,192.0.2.82,ge-0/0/23,tidak,tidak,,ya
+SIM-SW-KERTEK-01,[SIMULASI] Switch Utama Kecamatan Kertek,SIM-KEC-KERTEK,opd,Ruang pelayanan,switch,Merek Contoh,SA-800,SIM00000091,192.0.2.91,GigabitEthernet0/8,ya,ya,,ya
+SIM-SW-GARUNG-01,[SIMULASI] Switch Utama Kecamatan Garung,SIM-KEC-GARUNG,opd,Ruang pelayanan,switch,Merek Contoh,SA-800,SIM00000101,192.0.2.101,GigabitEthernet0/8,tidak,ya,Belum dipantau,ya

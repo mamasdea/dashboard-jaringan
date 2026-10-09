@@ -1,0 +1,53 @@
+# Rotasi log aplikasi dan kolektor.
+#
+#   sudo cp deploy/logrotate/dashboard-jaringan /etc/logrotate.d/dashboard-jaringan
+#   sudo logrotate --debug /etc/logrotate.d/dashboard-jaringan
+#
+# Dipakai bersama LOG_STACK=single. Jangan dipakai bersama LOG_STACK=daily:
+# kanal itu sudah merotasi sendiri (LOG_DAILY_DAYS).
+# Log nginx dan PHP-FPM dirotasi paket masing-masing; log unit systemd ada di
+# journald (batasi dengan SystemMaxUse= di /etc/systemd/journald.conf).
+
+/srv/dashboard-jaringan/storage/logs/*.log {
+    su dashboard dashboard
+    daily
+    rotate 30
+    missingok
+    notifempty
+    compress
+    delaycompress
+    # Laravel membuka berkas tiap menulis, jadi tidak perlu sinyal.
+    create 0640 dashboard dashboard
+}
+
+# Checkout kolektor (bila ada di host ini).
+/srv/dashboard-kolektor/storage/logs/*.log {
+    su kolektor kolektor
+    daily
+    rotate 30
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 kolektor kolektor
+}
+
+/var/log/php8.4-fpm-dashboard.*.log {
+    weekly
+    rotate 8
+    missingok
+    notifempty
+    compress
+    delaycompress
+    postrotate
+        /usr/lib/php/php8.4-fpm-reopenlogs 2>/dev/null || true
+    endscript
+}
+
+/var/log/dashboard-cadangan.log {
+    monthly
+    rotate 12
+    missingok
+    notifempty
+    compress
+}

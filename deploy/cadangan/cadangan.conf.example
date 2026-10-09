@@ -1,0 +1,17 @@
+# /etc/dashboard-jaringan/cadangan.conf — dibaca cadangkan.sh dan pulihkan.sh.
+# Berkas ini tidak memuat kata sandi: pg_dump berjalan sebagai pengguna
+# sistem "postgres" (autentikasi peer).
+
+NAMA_DATABASE="dashboard_jaringan"
+PEMILIK_DATABASE="dashboard_jaringan"
+DIREKTORI_APLIKASI="/srv/dashboard-jaringan"
+PENGGUNA_APLIKASI="dashboard"
+DIREKTORI_CADANGAN="/var/backups/dashboard-jaringan"
+
+# Lama cadangan disimpan di server ini (hari).
+RETENSI_HARI=14
+
+# Tujuan salinan di luar server (rsync), mis. "cadangan@nas.intra:/volume1/dashboard".
+# Memakai kunci SSH milik root tanpa frasa sandi yang dibatasi untuk rsync.
+# Kosong = tidak disalin; skrip mencatat peringatan setiap kali berjalan.
+SALIN_KE=""

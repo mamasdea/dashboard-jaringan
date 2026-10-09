@@ -1,0 +1,93 @@
+/*
+ * Penanda peta status dashboard. Status dibedakan dengan huruf di dalam
+ * penanda dan bentuknya, selain warna.
+ */
+
+.peta-status-penanda {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 26px;
+    height: 26px;
+    font: 700 13px/1 system-ui, sans-serif;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.55);
+}
+
+/* Di dalam teks legenda, penanda sedikit lebih kecil. */
+:not(.leaflet-marker-icon) > .peta-status-penanda {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+}
+
+/* Normal: lingkaran hijau, "N". */
+.peta-status-normal {
+    background: #15803d;
+}
+
+/* Koneksi menurun: persegi kuning tua, "M", teks gelap. */
+.peta-status-menurun {
+    color: #1c1917;
+    background: #f59e0b;
+    border-radius: 4px;
+}
+
+/* Endpoint tidak terjangkau: wajik merah, "T". */
+.peta-status-tidak_terjangkau {
+    background: #b91c1c;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #b91c1c, 0 0 0 3px rgb(0 0 0 / 0.55);
+}
+
+/* Belum diketahui: lingkaran putih bergaris putus-putus, "?". */
+.peta-status-belum_diketahui {
+    color: #27272a;
+    background: #ffffff;
+    border: 2px dashed #52525b;
+    box-shadow: none;
+}
+
+/* Pemeliharaan: persegi biru, "P". */
+.peta-status-pemeliharaan {
+    background: #1d4ed8;
+    border-radius: 4px;
+}
+
+.peta-status-popup {
+    min-width: 12rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+}
+
+.peta-status-popup-nama {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.peta-status-popup-status {
+    font-weight: 600;
+}
+
+.peta-status-popup-lencana {
+    padding: 0 0.3rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #86198f;
+    background: #fae8ff;
+    border-radius: 0.25rem;
+}
+
+.peta-status-popup-tautan {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-weight: 600;
+}
+
+.leaflet-container {
+    z-index: 0;
+    font: inherit;
+}

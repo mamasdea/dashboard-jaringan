@@ -1,0 +1,22 @@
+# Health check berkala. Bila ada komponen bermasalah, unit ini gagal:
+#
+#   systemctl --failed
+#   journalctl -u dashboard-kesehatan -n 30
+#
+# Hubungkan ke pemberitahuan milik Diskominfo lewat OnFailure= bila tersedia.
+
+[Unit]
+Description=Health check Dashboard Jaringan (database, penyimpanan, penjadwal, antrean, kolektor)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=dashboard
+Group=dashboard
+WorkingDirectory=/srv/dashboard-jaringan
+ExecStart=/usr/bin/php artisan kesehatan:periksa --no-interaction
+
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true

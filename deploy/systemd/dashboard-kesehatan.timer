@@ -1,0 +1,11 @@
+#   sudo systemctl enable --now dashboard-kesehatan.timer
+
+[Unit]
+Description=Health check Dashboard Jaringan tiap 5 menit
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target

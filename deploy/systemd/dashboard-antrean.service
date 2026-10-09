@@ -1,0 +1,34 @@
+# Worker antrean Dashboard Jaringan.
+#
+#   sudo cp deploy/systemd/dashboard-*.service deploy/systemd/dashboard-*.timer /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now dashboard-antrean.service
+#
+# Setelah memasang versi baru: sudo systemctl restart dashboard-antrean
+
+[Unit]
+Description=Worker antrean Dashboard Jaringan
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dashboard
+Group=dashboard
+WorkingDirectory=/srv/dashboard-jaringan
+# --max-time: worker keluar tiap jam dan dinyalakan lagi, supaya memori dan
+# kode yang dimuat tidak menua.
+ExecStart=/usr/bin/php artisan queue:work --sleep=3 --tries=3 --timeout=120 --max-time=3600
+Restart=always
+RestartSec=5
+# Memberi waktu pekerjaan yang sedang berjalan untuk selesai.
+TimeoutStopSec=150
+KillSignal=SIGTERM
+
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

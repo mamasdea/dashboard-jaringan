@@ -1,0 +1,13 @@
+# Cadangan database dan berkas unggahan; dipicu dashboard-cadangan.timer.
+# Berjalan sebagai root karena memakai pg_dump lewat pengguna postgres dan
+# menulis ke direktori cadangan yang tidak terbaca pengguna lain.
+
+[Unit]
+Description=Cadangan Dashboard Jaringan
+After=postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/dashboard-cadangkan
+Nice=10
+IOSchedulingClass=idle

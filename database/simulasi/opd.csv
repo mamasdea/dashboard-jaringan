@@ -1,0 +1,13 @@
+kode,nama,alamat,lintang,bujur,kontak_teknis_nama,kontak_teknis_telepon,kontak_teknis_email,aktif,simulasi
+SIM-DISKOMINFO,[SIMULASI] Dinas Komunikasi dan Informatika,"Jl. Contoh Pusat No. 1, Wonosobo",-7.358900,109.903200,[SIMULASI] Kontak NOC,0286 000001,noc@example.test,ya,ya
+SIM-SETDA,[SIMULASI] Sekretariat Daerah,"Jl. Contoh Pusat No. 2, Wonosobo",-7.359700,109.904100,[SIMULASI] Kontak Setda,0286 000002,setda@example.test,ya,ya
+SIM-BAPPEDA,[SIMULASI] Badan Perencanaan Pembangunan Daerah,"Jl. Contoh Utara No. 3, Wonosobo",-7.355200,109.905800,[SIMULASI] Kontak Bappeda,0286 000003,bappeda@example.test,ya,ya
+SIM-BPKAD,[SIMULASI] Badan Pengelolaan Keuangan dan Aset Daerah,"Jl. Contoh Utara No. 4, Wonosobo",-7.354100,109.901500,[SIMULASI] Kontak BPKAD,0286 000004,bpkad@example.test,ya,ya
+SIM-DINKES,[SIMULASI] Dinas Kesehatan,"Jl. Contoh Timur No. 5, Wonosobo",-7.362300,109.911400,[SIMULASI] Kontak Dinkes,0286 000005,dinkes@example.test,ya,ya
+SIM-DISDIK,[SIMULASI] Dinas Pendidikan,"Jl. Contoh Timur No. 6, Wonosobo",-7.365800,109.913900,[SIMULASI] Kontak Disdik,0286 000006,disdik@example.test,ya,ya
+SIM-DPUPR,[SIMULASI] Dinas Pekerjaan Umum dan Penataan Ruang,"Jl. Contoh Selatan No. 7, Wonosobo",-7.371200,109.898700,[SIMULASI] Kontak DPUPR,0286 000007,dpupr@example.test,ya,ya
+SIM-DUKCAPIL,[SIMULASI] Dinas Kependudukan dan Pencatatan Sipil,"Jl. Contoh Selatan No. 8, Wonosobo",-7.368400,109.896300,[SIMULASI] Kontak Dukcapil,0286 000008,dukcapil@example.test,ya,ya
+SIM-RSUD,[SIMULASI] Rumah Sakit Umum Daerah,"Jl. Contoh Barat No. 9, Wonosobo",-7.363500,109.892100,[SIMULASI] Kontak RSUD,0286 000009,rsud@example.test,ya,ya
+SIM-KEC-KERTEK,[SIMULASI] Kecamatan Kertek,"Jl. Contoh Kertek No. 10, Kertek",-7.388600,109.957300,[SIMULASI] Kontak Kertek,0286 000010,kertek@example.test,ya,ya
+SIM-KEC-GARUNG,[SIMULASI] Kecamatan Garung,"Jl. Contoh Garung No. 11, Garung",-7.303900,109.921800,[SIMULASI] Kontak Garung,0286 000011,garung@example.test,ya,ya
+SIM-ARSIP,[SIMULASI] Dinas Kearsipan dan Perpustakaan (nonaktif),"Jl. Contoh Barat No. 12, Wonosobo",,,,,,tidak,ya
